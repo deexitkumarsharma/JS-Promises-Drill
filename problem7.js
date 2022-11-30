@@ -1,18 +1,25 @@
-let promise1 = new Promise(function (resolve, reject) {
+let promise1 = new Promise((resolve, reject) => {
   resolve("Promise 1");
 });
 
-let promise2 = new Promise(function (resolve, reject) {
-  //resolve("Promise 2");
-  reject(new Error("I am rejected"));
+let promise2 = new Promise((resolve, reject) => {
+  reject(("Promise 2"));
 });
 
-let promise3 = new Promise(function (resolve, reject) {
+let promise3 = new Promise((resolve, reject) => {
   resolve("Promise 3");
 });
-let promise_all = Promise.all([promise1, promise2, promise3])
-  .then((res) => console.log(res))
-  .catch((err) => {
-    console.log("Error");
-    console.log(err);
+
+let promisesArray = [promise1, promise2, promise3];
+//console.log(promisesArray);
+
+let Promise_All = (promisesArray) => {
+    Promise.all(promisesArray).then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error + " " + "rejected");
   });
+}
+Promise_All(promisesArray);
+

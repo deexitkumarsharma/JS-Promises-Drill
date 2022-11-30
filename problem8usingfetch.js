@@ -9,27 +9,14 @@ let fetch = require("cross-fetch");
 let getData =
   "https://raw.githubusercontent.com/nnnkit/json-data-collections/master/got-houses.json";
 
-
-// function for handleError
-let checkFetch = function (response) {
-  if (!response.ok) {
-    throw error(response.statusText + "-" + response.url);
-  }
-  return response;
-};
-
 fetch(getData)
-  .then(checkFetch)
-  .then((response) => {
-    console.log(response.status);
-    console.log(response.ok)
-    // console.log("works");
-    return response.json();
+  .then((data) => {
+    //console.log(data);
+    return data.json();
   })
   .then((data) => {
-    console.log(data);
+    console.log(data.houses.map((elem) => elem.name));
   })
-  .catch((err) => {
-    console.log("Error");
-    console.log(err);
+  .catch((error) => {
+    console.log("-" + error + "-");
   });

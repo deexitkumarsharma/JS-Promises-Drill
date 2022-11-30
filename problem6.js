@@ -1,10 +1,9 @@
-function wait() {
+function wait(time) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-    }, 2000);
+    setTimeout(resolve, time * 1000);
   });
 }
-wait().then(function (resove) {
+
+wait(4).then((resove) => {
   console.log("Run Function after given Time");
 });

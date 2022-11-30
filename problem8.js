@@ -9,8 +9,6 @@ let fetch = require("cross-fetch");
 let getData =
   "https://raw.githubusercontent.com/nnnkit/json-data-collections/master/got-houses.json";
 
-// check if online/offline
-// http://www.kirupa.com/html5/check_if_internet_connection_exists_in_javascript.htm
 
 // function for handleError
 let checkFetch = function (response) {

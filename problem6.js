@@ -4,6 +4,6 @@ function wait(time) {
   });
 }
 
-wait(4).then((resove) => {
+wait(4).then(() => {
   console.log("Run Function after given Time");
 });

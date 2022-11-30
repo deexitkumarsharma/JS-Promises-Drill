@@ -1,8 +1,8 @@
 let secondPromise = new Promise(function (resolve, reject) {
-    resolve('Second!');
-  });
+  resolve("Second!");
+});
 let firstPromise = new Promise(function (resolve, reject) {
-    resolve(secondPromise);
-})
-  
+  resolve(secondPromise);
+});
+
 firstPromise.then((value) => console.log(value));
